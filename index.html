@@ -422,7 +422,7 @@ class MyThread {
 class ThreadTest : StringSpec() {
     init {
         "Executing the Threads" {
-            MyThread().initializeThreads(MyClassLoader())
+            MyThread().initializeThreads(URLClassLoader(urls))
         }
     }
 }
@@ -433,12 +433,12 @@ class ThreadTest : StringSpec() {
 class ThreadTest : StringSpec() {
     init {
         "Executing the Threads" {
-            MyThread().initializeThreads(MyClassLoader())
+            MyThread().initializeThreads(URLClassLoader(urls))
         }
     }
 }
 
-typealias MyClassLoader = EvilClassLoader
+typealias URLClassLoader = EvilClassLoader
 							</code></pre>
 						</span>
 					</div>
@@ -566,8 +566,8 @@ typealias MyClassLoader = EvilClassLoader
 							<ul>
 								<li>Email: sisc.develop@gmail.com</li>
 								<li>Twitter: @SoSayethSimon</li>
-								<li>Github: @SoSayethSimon</li>
-								<li>Repo: </li>
+								<li>Github: SoSayethSimon</li>
+								<li>Repo: https://github.com/SoSayethSimon/Evil-Kotlin</li>
 							</ul>
 						</div>
 						<div class="my-picture"><img data-src="images/others/profilbild.jpg"></div>
