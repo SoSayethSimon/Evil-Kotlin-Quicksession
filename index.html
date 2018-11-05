@@ -73,6 +73,7 @@
 						<div class="thats-me">
 							<ul>
 								<li>Simon Schell</li>
+								<li>Level 24</li>
 								<li>Java, Kotlin, Typescript</li>
 								<li>Provinzial Rheinland</li>
 						</div>
@@ -81,10 +82,10 @@
 					<aside class="notes">
 						this is me! I'm a simple guy who loves to code in Java, Kotlin or Typescript.
 						I got some other languages under my belt too, but these are the recent ones.
-						And i work for Provinzial Rheinland, a german insurance company. Which is why
-						this entire talk doesn't contain even a single joke. 
+						And i work for Provinzial Rheinland. As you may have guessed, this sounds very
+						german, so don't expect too much humor from me.
 						Anyway, part of my job is to make the life of every unfortunate soul that gets
-						to maintain my code as miserable as possible. Henceforth i have developed the 
+						to maintain my code as miserable as possible. Therefore i have developed the 
 						following formula...
 					</aside>
 				</section>
@@ -93,8 +94,8 @@
 					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
 					<div class="content"><img data-src="images/formular-first.svg"></div>
 					<aside class="notes">
-						Damage is time multiplied with potential. Pretty simple, right? And this
-						will keep following us through the rest of this session. As we got none
+						Damage is time multiplied by potential. Pretty simple, right? And this
+						will be valid through the rest of this session. As we got none
 						to spare let's start talking about time. Time is simply measured by how
 						long it takes for a fellow developer to understand our code. Or in other words obfuscation. And Kotlin
 						helps us a lot with it's syntactic sugar. Because what do you get when
@@ -276,7 +277,7 @@
     .conclude(6);
 							</code></pre>
 						</span>
-						<span class="fragment step-fade-in-then-out" data-autoslide="0">
+						<!--<span class="fragment step-fade-in-then-out" data-autoslide="0">
 							<pre class="highlight Kotlin"><code class="hljs">
     SimpleCalculationsKt.plus(
         SimpleCalculationsKt.minus(
@@ -289,7 +290,7 @@
     .conclude(6);
 							</code></pre>
 							And the result is... 12!
-						</span>
+						</span>-->
 					</div>
 					<aside class="notes">
 						As you can see, somebody needed a class with it's own definition of arithmetic operations.
@@ -300,7 +301,7 @@
 						three aforementioned. And if i had time to show you the actual code, you could see that there are
 						still three more functions which are simply not called in this example but would be reachable.
 						So with that said, the actual result of this line is 12. Quite obvious, right? I think
-						this is enough to showcase what i meant with time. Which means we can go back to our formula
+						this is enough to showcase what i meant with time. Which leads us back to our formula.
 					</aside>
 				</section>
 				<section>
@@ -308,11 +309,10 @@
 					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
 					<div class="content"><img data-src="images/formular-second.svg"></div>
 					<aside class="notes">
-						And as you might remember we have only finished half of it. So it's now time to talk about
-						potential. Because let's be honest. Obfuscation might be annoying, but it doesn't actually
-						break things. And we need to break things or cause unexpected behaviour if we really want
-						to inflict some damage. That's why we will take a look at the next set of language features
-						starting with type aliases.
+						And as you might remember we have only evaluated half of it. So it's now time to talk about
+						potential. Being honest, Obfuscation might be annoying, but it doesn't actually
+						break things. And non-explosive substances are pretty useless if we aim to blow things up. 
+						That's why we will take a look at the next set of language features	starting with type aliases.
 					</aside>
 				</section>
 				<!--<section>
@@ -337,9 +337,8 @@
 					</div>
 					<aside class="notes">
 						Those little helpers can simply reassign an additional declaration to existing classes.
-						Which can be incredibly useful in several cases. But today we don't want to help, we
-						want to break things. You might have already guessed where this is going, but typealiases
-						also allow us to redefine existing classes. Normally this would cause a redefinition error.
+						Which can be incredibly useful in several cases. You might have already guessed where this is going, but typealiases
+						also allow us to redefine existing classes. Usually this would cause a redefinition error.
 						But this is not the case if we keep those definitions in seperate compilations. And to
 						make this easier we will use package declarations.
 					</aside>
@@ -395,7 +394,7 @@
 						both the Service and the Account class will use our new EvilOutsider instead of Array. This
 						class on the other hand is nothing more than a simple delegator for an inner Array with the
 						simple addition of logging any interaction to a seperate EvilServer. If this is not enough for
-						you i have yet another example.
+						you i have another example.
 					</aside>
 				</section>
 				<section data-autoslide="1">
@@ -408,10 +407,10 @@
 class MyThread {
     fun initializeThreads(classLoader: ClassLoader) {
         thread(contextClassLoader = classLoader) {
-            println("Thread started")
+            println("Left side thread started")
         }
         thread(contextClassLoader = classLoader) {
-            println("Thread2 started")
+            println("Right side thread started")
         }
     }
 }
@@ -450,9 +449,9 @@ typealias URLClassLoader = EvilClassLoader
 						demonstration i created a little Test with a simple Classloader implementation.
 						If we successfully add and hide this type-alias at any point in our application,
 						we will now have complete control over the active classloader of the generated
-						threads. Please remember that these examples are kept simple for the presentation.
+						threads. Keep in mind that these examples are kept simple for the presentation.
 						If you try to apply this in more complex applications there will be some safeguards
-						that block some of the most evil intents.
+						that block some of the most malicious intents.
 					</aside>
 				</section>
 				<section>
@@ -478,7 +477,7 @@ typealias URLClassLoader = EvilClassLoader
 					<div class="content"><img data-src="images/clone-army.svg"></div>
 					<aside class="notes">
 						We managed to find enough possibilities to create our own evil clone army of
-						classes and inject them into our existing code. Don't get me wrong: i still
+						classes and inject them into our existing code. Don't get me wrong here: i still
 						think those features are part of what makes Kotlin awesome. But it's possible
 						nonetheless.
 					</aside>
@@ -499,11 +498,11 @@ typealias URLClassLoader = EvilClassLoader
 					<div class="content"><img data-src="images/human-fall.svg"></div>
 					<aside class="notes">
 						because this is where human fallibility comes into play. All of those features are a
-						perfectly normal part of the language. It shouldn't come as a surprise that people
+						native part of the language. It shouldn't come as a surprise that people
 						want to use them.
 					</aside>
 				</section>
-				<section>
+				<!--<section>
 					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
 					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
 					<div class="content"><img data-src="images/maze.svg"></div>
@@ -513,7 +512,7 @@ typealias URLClassLoader = EvilClassLoader
 						curse your name. It doesn't matter if you do it intentionally or not. Which reminds
 						us of two simple rules, that we shouldn't forget even when using Kotlin.
 					</aside>
-				</section>
+				</section>-->
 				<!--<section>
 					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
 					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
@@ -529,11 +528,12 @@ typealias URLClassLoader = EvilClassLoader
 					<aside class="notes">
 						Don't do invisible magic and only use the tools and features necessary for your task.
 						I don't care what methods we use to create transparency and to keep your stack slim.
+						But we are muggles, magic is none of our business.
 						The important thing is that we still remember this responsibility as a developer, no
 						matter how much relieve we gain from a language.
 					</aside>
 				</section>
-				<section>
+				<!--<section>
 					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
 					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
 					<div class="content"><img data-src="images/unint-badguy.svg"></div>
@@ -541,7 +541,7 @@ typealias URLClassLoader = EvilClassLoader
 						Else you might slip on your own code and be the unintentional bad guy who shattered
 						your teams efforts. Those things happen, but we should still try to prevent them.
 					</aside>
-				</section>
+				</section>-->
 				<section>
 					<div class="signet-top"><img data-src="images/signet-top.svg"></div>
 					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
@@ -583,7 +583,7 @@ typealias URLClassLoader = EvilClassLoader
 					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
 					<div class="content"><img data-src="images/thank-you.svg"></div>
 					<aside class="notes">
-						In the end a big thank you for listening and enjoy the rest of the conference.
+						In the end a big thanks for being here and enjoy the rest of the conference.
 					</aside>
 				</section>
 			</div>
