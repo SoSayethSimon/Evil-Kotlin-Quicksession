@@ -298,6 +298,8 @@ body {
 }
 
 .signet-intro {
+  position: relative;
+  top: 20vh;
   width: 60vw;
   height: 60vh;
   margin: auto !important;
