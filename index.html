@@ -368,7 +368,7 @@
 					<div class="content">
 						<p class="fragment"></p>
 						<span class="fragment step-fade-in-then-out" data-autoslide="0">
-							<img class="small-img diagram" data-src="images/plantuml/Devoxx-EvilArray-Before.svg">
+							<img class="diagram" data-src="images/plantuml/Devoxx-EvilArray-Before.svg">
 						</span>
 						<span class="fragment step-fade-in-then-out" data-autoslide="0">
 							<img class="small-img diagram" data-src="images/plantuml/Devoxx-EvilArray-Before.svg">
@@ -499,7 +499,9 @@ typealias URLClassLoader = EvilClassLoader
 					<aside class="notes">
 						because this is where human fallibility comes into play. All of those features are a
 						native part of the language. It shouldn't come as a surprise that people
-						want to use them.
+						want to use them. But as with most things, relying too much on them will backfire.
+						So we need to take some precautions. As always there is no silver bullet, but there
+						are two rules i would like to throw into the room...
 					</aside>
 				</section>
 				<!--<section>
@@ -526,11 +528,10 @@ typealias URLClassLoader = EvilClassLoader
 					<div class="polygons-bottom"><img data-src="images/polygons-bottom.svg"></div>
 					<div class="content"><img data-src="images/magic-n-tools.svg"></div>
 					<aside class="notes">
-						Don't do invisible magic and only use the tools and features necessary for your task.
-						I don't care what methods we use to create transparency and to keep your stack slim.
-						But we are muggles, magic is none of our business.
-						The important thing is that we still remember this responsibility as a developer, no
-						matter how much relieve we gain from a language.
+						Don't do invisible magic and only use the tools necessary for your task.
+						I don't care what methods we use to create transparency and to keep our stack slim.
+						The important thing is that we as developers remember our responsibility to keep a look out
+						for those problems, no matter how much relieve we gain from a language.
 					</aside>
 				</section>
 				<!--<section>
